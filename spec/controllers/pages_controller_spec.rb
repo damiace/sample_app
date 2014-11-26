@@ -48,5 +48,19 @@ RSpec.describe PagesController, :type => :controller do
   end
   
   
+    describe "GET help" do
+
+    it " GET about returns http success" do
+      get :help
+      expect(response).to have_http_status(:success)
+    end
+    
+    it "devrait avoir le bon titre" do
+      get :help
+      expect(response.body).to include("Simple App du Tutoriel Ruby on Rails | Aide")
+    end
+  end
+  
+  
 
 end
